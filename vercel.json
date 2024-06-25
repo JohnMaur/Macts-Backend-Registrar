@@ -1,5 +1,5 @@
 {
   "version": 2,
-  "builds": [{"src": "./Registrar-server.js", "use": "@versel/node"}],
+  "builds": [{"src": "./Registrar-server.js", "use": "@vercel/node"}],
   "routes": [{"src": "/(.*)", "dest": "/"}]
 }
