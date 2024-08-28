@@ -115,7 +115,8 @@ app.post('/tagData', async (req, res) => {
 
   // Fetch student information from the MySQL server
   try {
-    const response = await axios.get('https://macts-backend-webapp-production-0bd2.up.railway.app/studentInfo');
+    // const response = await axios.get('https://macts-backend-webapp-production-0bd2.up.railway.app/studentInfo');
+    const response = await axios.get('https://macts-backend-webapp.onrender.com/studentInfo');
     const students = response.data;
     const formattedDate = moment().tz('Asia/Manila').format('M/D/YYYY, h:mm:ss A'); // Format the date in Philippine Time
 
@@ -138,7 +139,8 @@ app.post('/tagData', async (req, res) => {
         user_id: matchedStudent.user_id
       };
 
-      await axios.post('https://macts-backend-mobile-app-production.up.railway.app/registrar_history', registrarHistory);
+      // await axios.post('https://macts-backend-mobile-app-production.up.railway.app/registrar_history', registrarHistory);
+      await axios.post('https://macts-backend-mobile-app.onrender.com/registrar_history', registrarHistory);
       console.log('Tap history recorded successfully');
     } else {
       console.log('No matching RFID tag found');
